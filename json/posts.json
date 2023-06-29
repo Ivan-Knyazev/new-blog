@@ -187,23 +187,6 @@
 },
 {
   "_id": {
-    "$oid": "649cbb4096446a4dd7d565e5"
-  },
-  "postId": 20,
-  "title": "ut at exercitationem delectus eum",
-  "text": "Laborum est placeat nulla sint aut ullam dolores. Rerum ut dolor sapiente voluptatem vel sit quia qui aut. Deleniti aut soluta tempore deserunt facere aut in. Id maxime animi amet amet ut deserunt tempore est.\n \rSed beatae exercitationem maxime voluptatum sunt. Adipisci id et facere placeat. Aliquam alias deleniti aut. Quis quaerat neque porro et vitae odit corporis. Repellendus quae vel et.\n \rNobis voluptas rerum ex vel unde aspernatur laboriosam aut eveniet. Et dolores qui. Distinctio officiis aliquam ipsum aperiam repellat. Consequatur nesciunt perspiciatis ex omnis dolore deserunt provident saepe mollitia. Aspernatur at ut qui atque expedita est eaque.",
-  "photo": "https://loremflickr.com/cache/resized/65535_50099509738_bcc95f4ee1_c_640_480_g.jpg",
-  "author": "Merle",
-  "createdAt": {
-    "$date": "2023-06-28T22:59:12.657Z"
-  },
-  "updatedAt": {
-    "$date": "2023-06-28T22:59:12.657Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
     "$oid": "649cbb5996446a4dd7d565f5"
   },
   "postId": 21,
