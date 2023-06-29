@@ -76,7 +76,7 @@ export default {
                 },
             });
 
-            alert("Посты успешно сгенерированы!");
+            alert("Пост успешно сгенерирован!");
             this.loadAll();
             this.$router.push({
                 name: "home",
