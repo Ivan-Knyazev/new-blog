@@ -18,7 +18,13 @@ git clone git@github.com:Ivan-Knyazev/new-blog.git
 
 ```sh
 cd backend
+```
+
+```sh
 npm install
+```
+
+```sh
 npm run backend
 ```
 
@@ -30,7 +36,13 @@ npm run backend
 
 ```sh
 cd ../frontend
+```
+
+```sh
 npm install
+```
+
+```sh
 npm run frontend
 ```
 

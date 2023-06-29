@@ -23,33 +23,6 @@ export default {
                 name: "create",
             });
         },
-        // async generate(count) {
-        //     let response = await axios.get("/posts/generate?count=" + count, {
-        //         validateStatus: function (status) {
-        //             if (status > 400) {
-        //                 console.log("ERROR: Status code " + status);
-        //             }
-        //             return status < 400; // Разрешить, если код состояния меньше 400
-        //         },
-        //     });
-
-        //     alert("Посты успешно сгенерированы!");
-        //     this.loadAll();
-        //     this.$router.push({
-        //         name: "home",
-        //     });
-        // },
-        // async loadAll() {
-        //     let response = await axios.get("/posts", {
-        //         validateStatus: function (status) {
-        //             if (status > 400) {
-        //                 console.log("ERROR: Status code " + status);
-        //             }
-        //             return status < 400; // Разрешить, если код состояния меньше 400
-        //         },
-        //     });
-        //     this.posts = response.data.posts;
-        // },
     },
 };
 </script>
