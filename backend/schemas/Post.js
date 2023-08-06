@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/new-blog");
+const mongoose = require("./db");
 
 const postsSchema = new mongoose.Schema(
     {

@@ -1,24 +1,21 @@
 const express = require(`express`);
-const mongoose = require("mongoose");
 const cors = require("cors");
-const axios = require("axios").default;
-const faker = require(`faker`);
 const app = express();
 
+const config = require("./utils/loadEnv") || 3000;
 const postRouter = require("./routers/post");
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/new-blog"); // Настройка БД
+// app.use(express.static('public')); // Раздача статических файлов
+// app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({ origin: "http://localhost:5173" })); // Настройка CORS
-
+frontPatch = "http://" + config.frontHost + ":" + config.frontPort;
 app.use(express.json()); // Настройка POST-запроса — JSON
+app.use(cors({ origin: frontPatch })); // Настройка CORS
+app.disable("x-powered-by"); // Отключение "ненужных" заголовков [server, via]
 
 app.use("/", postRouter);
 
-
-const port = 3005;
-
-app.listen(port, function () {
-    console.log(`http://localhost:${port}`);
+app.listen(config.backPort, function () {
+    console.log(`Service started in: ` + `http://localhost:${config.backPort}`);
 });
