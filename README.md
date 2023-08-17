@@ -6,9 +6,31 @@
 
 ![preview image](preview/preview.png)
 
-## Руководство по запуску
 
-### 1. Клонирование репозитория
+## Руководство по запуску в Docker
+
+### 1. Клонирование репозитория (по ssh)
+
+```sh
+git clone git@github.com:Ivan-Knyazev/new-blog.git
+```
+
+### 2. Запуск приложения
+
+```sh
+docker compose up --build -d
+```
+
+## Использование
+
+Для работы с приложением в браузере перейдите по адресу http://localhost
+
+<br/>
+
+
+## Руководство по запуску для локального использования
+
+### 1. Клонирование репозитория (по ssh)
 
 ```sh
 git clone git@github.com:Ivan-Knyazev/new-blog.git

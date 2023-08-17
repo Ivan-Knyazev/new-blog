@@ -1,5 +1,4 @@
-# Stage 1 - Build project
-FROM node:lts-alpine as builder
+FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
