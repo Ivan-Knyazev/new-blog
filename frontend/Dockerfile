@@ -1,5 +1,5 @@
 # Stage 1 - Build project
-FROM node:lts-alpine as builder
+FROM node:lts-alpine as build-stage
 
 WORKDIR /usr/src/app
 COPY package*.json ./
@@ -10,9 +10,9 @@ RUN npm run build
 
 
 # Stage 2 - Deploy with NGINX
-FROM nginx:latest
+FROM nginx:latest as production-stage
 
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build-stage /usr/src/app/dist /app
 COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./.nginx/default.conf /etc/nginx/conf.d/default.conf
 
