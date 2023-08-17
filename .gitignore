@@ -1,5 +1,14 @@
 # Env
 .env
+.env.test
+.env*.local
+
+# Data and Logs in containers
+mongodb/data
+mongodb/logs
+
+# Build output
+dist
 
 # Logs
 logs
@@ -12,7 +21,6 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
-dist
 dist-ssr
 coverage
 *.local
@@ -29,3 +37,16 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+
+# Caching files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+.eslintcache
+.stylelintcache
+
+# npm and yarn cache
+.npm/
+.yarn/

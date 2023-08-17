@@ -14,6 +14,13 @@ app.use(express.json()); // Настройка POST-запроса — JSON
 app.use(cors({ origin: frontPatch })); // Настройка CORS
 app.disable("x-powered-by"); // Отключение "ненужных" заголовков [server, via]
 
+// app.use((_req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', '*');
+  
+//     next();
+// });
+
 app.use("/", postRouter);
 
 app.listen(config.backPort, function () {

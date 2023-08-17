@@ -1,0 +1,65 @@
+version: "3.7"
+
+services:
+  mongo:
+    container_name: blog-mongodb
+    image: mongo:latest
+    command: mongod --port ${BLOG_MONGODB_PORT}
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${BLOG_MONGODB_USER:-mongodb}
+      MONGO_INITDB_ROOT_PASSWORD: ${BLOG_MONGODB_PASSWORD:-mongodb}
+      MONGO_INITDB_ROOT_DATABASE: ${BLOG_MONGODB_DB:-mongodb}
+    # ports:
+    #   - ${BLOG_MONGODB_PORT:-27017}:${BLOG_MONGODB_PORT:-27017}
+    volumes:
+      # - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - ./mongodb/data:/data/db
+      - ./mongodb/logs:/var/log/mongodb
+    networks:
+      - backend-network
+
+  backend:
+    container_name: blog-backend
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    image: blog-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    # ports:
+    #   - ${BLOG_BACKEND_PORT}:${BLOG_BACKEND_PORT}
+    depends_on:
+      - mongo
+    # volumes:
+    #   - .:/src
+    networks:
+      - backend-network
+      - frontend-network
+
+  frontend:
+    container_name: blog-frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    image: blog-frontend
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env
+    ports:
+      - ${NGINX_PUBLIC_PORT}:${NGINX_INTERNAL_PORT}
+    depends_on:
+      - backend
+    networks:
+      - frontend-network
+
+networks:
+  backend-network:
+    name: backend-network
+    driver: bridge
+  frontend-network:
+    name: frontend-network
+    driver: bridge
