@@ -30,8 +30,8 @@ services:
     restart: unless-stopped
     env_file:
       - ./backend/.env
-    # ports:
-    #   - ${BLOG_BACKEND_PORT}:${BLOG_BACKEND_PORT}
+    ports:
+      - ${BLOG_BACKEND_PORT}:${BLOG_BACKEND_PORT}
     depends_on:
       - mongo
     # volumes:
