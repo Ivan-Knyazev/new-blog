@@ -15,6 +15,24 @@
 git clone git@github.com:Ivan-Knyazev/new-blog.git
 ```
 
+### 2. Установка переменных окружения
+
+```sh
+cd backend/
+cp .env.example .env
+```
+Установка необходимых хначений в `.env` для backend
+```sh
+cd ../frontend/
+cp .env.example .env
+```
+Установка необходимых хначений в `.env` для frontend
+```sh
+cd ..
+cp .env.example .env
+```
+Установка необходимых хначений в `.env` для запуска проекта
+
 ### 2. Запуск приложения
 
 ```sh
