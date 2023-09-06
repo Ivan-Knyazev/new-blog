@@ -18,7 +18,7 @@ git clone git@github.com:Ivan-Knyazev/new-blog.git
 ### 2. Установка переменных окружения
 
 ```sh
-cd backend/
+cd new-blog/backend/
 cp .env.example .env
 ```
 Установка необходимых хначений в `.env` для backend
