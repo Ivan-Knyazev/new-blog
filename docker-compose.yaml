@@ -38,7 +38,7 @@ services:
     #   - .:/src
     networks:
       - backend-network
-      - frontend-network
+      # - frontend-network
 
   frontend:
     container_name: blog-frontend
@@ -53,13 +53,13 @@ services:
       - ${NGINX_PUBLIC_PORT}:${NGINX_INTERNAL_PORT}
     depends_on:
       - backend
-    networks:
-      - frontend-network
+    # networks:
+    #   - frontend-network
 
 networks:
   backend-network:
     name: backend-network
     driver: bridge
-  frontend-network:
-    name: frontend-network
-    driver: bridge
+  # frontend-network:
+  #   name: frontend-network
+  #   driver: bridge

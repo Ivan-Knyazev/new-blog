@@ -16,6 +16,4 @@ COPY --from=build-stage /usr/src/app/dist /app
 COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./.nginx/default.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE ${NGINX_PORT}
-
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
